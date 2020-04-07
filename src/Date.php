@@ -16,7 +16,7 @@ class Date extends DateTime
 
     public static function Create(int $year = null, int $month = null, int $day = null): self
     {
-        $now = static::now();
+        $now = static::Now();
 
         $defaults = array_combine(["year", "month", "day"], explode("-", $now->format("Y-n-j")));
 

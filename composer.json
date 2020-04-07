@@ -1,11 +1,11 @@
 {
     "name": "mathsgod/date",
-    "description": "date library",
+    "description": "date library for php",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
-            "name": "Raymond",
+            "name": "Raymond Chong",
             "email": "mathsgod@yahoo.com"
         }
     ],

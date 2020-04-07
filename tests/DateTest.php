@@ -11,6 +11,13 @@ final class DateTest extends TestCase
     {
         $date = Date::Create(2000, 1, 1);
         $this->assertInstanceOf(Date::class, $date);
+
+        $date = Date::Create(2000, 4, 31);
+        $this->assertEquals(5, $date->month);
+        $this->assertEquals(1, $date->day);
+
+        $date = Date::Create(2000);
+        $this->assertEquals($date->year, 2000);
     }
 
     public function test_year()

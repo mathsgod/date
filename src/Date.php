@@ -2,18 +2,36 @@
 
 class Date extends DateTime
 {
-    public static function Create(int $year, int $month, int $day): self
+    public static function Create(int $year = null, int $month = null, int $day = null): self
     {
+        $now = static::now();
+
+        $defaults = array_combine(["year", "month", "day"], explode("-", $now->format("Y-n-j")));
+
+        $year = $year ?? $defaults["year"];
+        $month = $month ?? $defaults["month"];
+        $day = $day ?? $defaults["day"];
+
         $date = new self($year . "-" . $month . "-" . $day);
         return $date;
     }
 
+    public static function now(): self
+    {
+        return new self();
+    }
 
     public function set(string $name, int $value)
     {
         switch ($name) {
             case "year":
                 $this->year($value);
+                break;
+            case "month":
+                $this->month($value);
+                break;
+            case "day":
+                $this->day($value);
                 break;
         }
     }

@@ -7,6 +7,8 @@ echo $date->day; //1
 
 $date = Date::Now(); //now
 $date->addYears(1); //next year
+$date->addDays(1);
+$date->addMonths(1);
 
 $tomorrow = Date::CreateFromString("tomorrow"); //tomorrow
 ```

@@ -38,4 +38,14 @@ class DateRange
     {
         return $this->toString();
     }
+
+    public function getStart(): Date
+    {
+        return $this->start;
+    }
+
+    public function getEnd(): Date
+    {
+        return $this->end;
+    }
 }

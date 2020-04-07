@@ -20,6 +20,12 @@ final class DateTest extends TestCase
         $this->assertEquals($date->year, 2000);
     }
 
+    public function test_now()
+    {
+        $date = Date::Now();
+        $this->assertInstanceOf(Date::class, $date);
+    }
+
     public function test_year()
     {
         $d = Date::Create(2000, 1, 1);
@@ -36,5 +42,31 @@ final class DateTest extends TestCase
     {
         $d = Date::Create(2000, 12, 31);
         $this->assertEquals(31, $d->day);
+    }
+
+    public function test_add_year()
+    {
+        $d = Date::Create(2000, 1, 1);
+        $d->addYears(1);
+        $this->assertEquals(2001, $d->year);
+    }
+
+    public function test_add_month()
+    {
+        $d = Date::Create(2000, 1, 1);
+        $d->addMonths(1);
+        $this->assertEquals(2, $d->month);
+    }
+
+    public function test_add_day()
+    {
+        $d = Date::Create(2000, 1, 1);
+        $d->addDays(1);
+        $this->assertEquals(2, $d->day);
+
+        $d = Date::Create(2000, 1, 31);
+        $d->addDays(1);
+        $this->assertEquals(2, $d->month);
+        $this->assertEquals(1, $d->day);
     }
 }

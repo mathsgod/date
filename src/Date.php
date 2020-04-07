@@ -16,7 +16,7 @@ class Date extends DateTime
         return $date;
     }
 
-    public static function now(): self
+    public static function Now(): self
     {
         return new self();
     }
@@ -77,5 +77,19 @@ class Date extends DateTime
     {
         $this->setDate($this->year, $this->month, $day);
         return $this;
+    }
+    public function addYears(int $value = 1)
+    {
+        return $this->modify((int) $value . ' year');
+    }
+
+    public function addMonths(int $value = 1)
+    {
+        return $this->modify((int) $value . ' months');
+    }
+
+    public function addDays(int $value = 1)
+    {
+        return $this->modify((int) $value . ' day');
     }
 }

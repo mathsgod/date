@@ -1,0 +1,21 @@
+{
+    "name": "mathsgod/date",
+    "description": "date library",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Raymond",
+            "email": "mathsgod@yahoo.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        }
+    },
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^6.5"
+    }
+}

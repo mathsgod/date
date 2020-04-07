@@ -18,6 +18,9 @@ final class DateTest extends TestCase
 
         $date = Date::Create(2000);
         $this->assertEquals($date->year, 2000);
+
+        $tomorrow = Date::CreateFromString("tomorrow");
+        $this->assertEquals($tomorrow->day, date("d", strtotime("tomorrow")));
     }
 
     public function test_now()

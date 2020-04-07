@@ -1,7 +1,19 @@
 <?
 
+/**
+ * @property int $year
+ * @property int $month
+ * @property int $day
+ */
+
 class Date extends DateTime
 {
+
+    public static function CreateFromString(string $string): self
+    {
+        return new self($string);
+    }
+
     public static function Create(int $year = null, int $month = null, int $day = null): self
     {
         $now = static::now();

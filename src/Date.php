@@ -1,4 +1,4 @@
-<?
+<?php
 
 /**
  * @property int $year
